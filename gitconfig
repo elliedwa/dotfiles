@@ -1,0 +1,22 @@
+[user]
+	name = Elliot Edwards
+	email = elliot.c.edwards@gmail.com
+[credential]
+	helper = osxkeychain
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --graph --pretty=format:'%C(auto) %h%d %s | %an | %ar <%as>'
+	type = cat-file -t
+	dump = cat-file -p
+	
+[pull]
+	rebase = false
+[http]
+	sslVerify = false
+[init]
+	defaultBranch = main
