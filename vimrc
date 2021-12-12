@@ -16,7 +16,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim'
 Plug 'dahu/vim-help'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdcommenter'
@@ -39,11 +38,13 @@ let g:airline_symbols.space = "\ua0"
 let g:airline_powerline_fonts = 1
 
 "this is necessary for vim to have colors inside of tmux ¯\_(ツ)_/¯
-if (has("termguicolors"))
-    set termguicolors
+" Enable true color 启用终端24位色
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
-let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
-let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+
 
 "COLORS!
 " For dark version.

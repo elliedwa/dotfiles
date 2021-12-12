@@ -23,7 +23,18 @@ zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
 
 # everforest theme
-zinit snippet https://github.com/sainnhe/dotfiles/raw/master/.zsh-theme-everforest-dark
+zinit snippet \
+    https://github.com/sainnhe/dotfiles/raw/master/.zsh-theme-everforest-dark
+
+# using the colors
+zinit snippet https://raw.githubusercontent.com/zuxfoucault/colored-man-pages_mod/master/colored-man-pages_mod.plugin.zsh
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
