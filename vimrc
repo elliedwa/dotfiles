@@ -24,6 +24,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Plug 'morhetz/gruvbox'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'sainnhe/everforest'
 
 Plug 'preservim/vimux' "vim + tmux = :thumbs-up:
 Plug 'benmills/vimux-golang' "I do a lot with go
@@ -45,7 +46,15 @@ let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 
 "COLORS!
-let g:airline_theme="base16_vim"
-let base16colorspace=256
-colorscheme base16-gruvbox-dark-medium 
+" For dark version.
+set background=dark
 
+" For light version.
+" set background=light
+
+" Set contrast.
+" This configuration option should be placed before `colorscheme everforest`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:everforest_background = 'soft'
+
+colorscheme everforest
