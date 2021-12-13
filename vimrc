@@ -27,6 +27,8 @@ Plug 'sainnhe/everforest'
 
 Plug 'preservim/vimux' "vim + tmux = :thumbs-up:
 Plug 'benmills/vimux-golang' "I do a lot with go
+Plug 'edkolev/tmuxline.vim'
+
 call plug#end()
 
 if !exists('g:airline_symbols')
@@ -57,5 +59,7 @@ set background=dark
 " This configuration option should be placed before `colorscheme everforest`.
 " Available values: 'hard', 'medium'(default), 'soft'
 let g:everforest_background = 'soft'
+let g:everforest_disable_italic_comment = 1
 
 colorscheme everforest
+let g:airline_theme = 'everforest'
