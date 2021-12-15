@@ -20,6 +20,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dahu/vim-help'
@@ -29,6 +30,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Plug 'morhetz/gruvbox'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'Chiel92/vim-autoformat'
 Plug 'sainnhe/everforest'
 
 Plug 'preservim/vimux' "vim + tmux = :thumbs-up:
@@ -69,3 +71,7 @@ let g:everforest_disable_italic_comment = 1
 
 colorscheme everforest
 let g:airline_theme = 'everforest'
+
+let g:formatdef_astyle_linux_c = '"astyle --style=linux -s8"'
+let g:formatters_c = ['astyle_linux_c']
+
