@@ -27,6 +27,9 @@ zinit snippet https://github.com/sainnhe/dotfiles/raw/master/.zsh-theme-everfore
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+unsetopt beep
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _ignored _approximate
