@@ -38,3 +38,12 @@ zinit wait lucid for \
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _ignored _approximate
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]} m:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle :compinstall filename '/Users/eli/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
