@@ -50,3 +50,11 @@ zinit wait lucid for \
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 unsetopt beep
+# The following lines were added by compinstall
+
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}'
+zstyle :compinstall filename '/Users/elliotedwards/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
