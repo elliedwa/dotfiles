@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 ### Added by Zinit's installer
@@ -17,6 +17,7 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit istaller code
 
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
@@ -27,26 +28,25 @@ zinit snippet \
     https://github.com/sainnhe/dotfiles/raw/master/.zsh-theme-everforest-dark
 
 # using the colors
-zinit snippet https://raw.githubusercontent.com/zuxfoucault/colored-man-pages_mod/master/colored-man-pages_mod.plugin.zsh
+#zinit snippet https://raw.githubusercontent.com/zuxfoucault/colored-man-pages_mod/master/colored-man-pages_mod.plugin.zsh
+#zinit wait lucid for \
+#atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+#zdharma-continuum/fast-syntax-highlighting \
+#blockf \
+#zsh-users/zsh-completions \
+#atload"!_zsh_autosuggest_start" \
+#zsh-users/zsh-autosuggestions
+
 zinit wait lucid for \
- atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    atinit"zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
- blockf \
     zsh-users/zsh-completions \
- atload"!_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-autosuggestions \
+    OMZP::colored-man-pages \
+    as"completion" \
+    OMZP::docker/_docker
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 unsetopt beep
-
-# The following lines were added by compinstall
-
-zstyle ':completion:*' completer _expand _ignored _approximate
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]} m:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle :compinstall filename '/Users/eli/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
