@@ -17,6 +17,7 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit istaller code
 
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
@@ -27,18 +28,25 @@ zinit snippet \
     https://github.com/sainnhe/dotfiles/raw/master/.zsh-theme-everforest-dark
 
 # using the colors
-zinit snippet https://raw.githubusercontent.com/zuxfoucault/colored-man-pages_mod/master/colored-man-pages_mod.plugin.zsh
+#zinit snippet https://raw.githubusercontent.com/zuxfoucault/colored-man-pages_mod/master/colored-man-pages_mod.plugin.zsh
+#zinit wait lucid for \
+#atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+#zdharma-continuum/fast-syntax-highlighting \
+#blockf \
+#zsh-users/zsh-completions \
+#atload"!_zsh_autosuggest_start" \
+#zsh-users/zsh-autosuggestions
+
 zinit wait lucid for \
-    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    atinit"zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
-    blockf \
     zsh-users/zsh-completions \
-    atload"!_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-autosuggestions \
+    OMZP::colored-man-pages \
+    as"completion" \
+    OMZP::docker/_docker
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 unsetopt beep
-
-source $HOME/.config/zsh/completion.zsh
