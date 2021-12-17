@@ -39,14 +39,22 @@ zinit snippet \
 
 zinit wait lucid for \
     atinit"zicompinit; zicdreplay" \
-    zdharma-continuum/fast-syntax-highlighting \
     zsh-users/zsh-completions \
     zsh-users/zsh-autosuggestions \
-    OMZP::colored-man-pages \
+    ael-code/zsh-colored-man-pages \
+    zdharma-continuum/fast-syntax-highlighting \
     as"completion" \
-    OMZP::docker/_docker
+    davidde/git
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 unsetopt beep
+# The following lines were added by compinstall
+
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}'
+zstyle :compinstall filename '/Users/elliotedwards/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
