@@ -1,5 +1,5 @@
 [user]
-	name = Elliot Edwards
+	name = Elliot C. Edwards
 	email = elliot.c.edwards@gmail.com
 [credential]
 	helper = osxkeychain
@@ -13,7 +13,6 @@
 	hist = log --graph --pretty=format:'%C(auto) %h%d %s | %an | %ar <%as>'
 	type = cat-file -t
 	dump = cat-file -p
-	
 [pull]
 	rebase = false
 [http]

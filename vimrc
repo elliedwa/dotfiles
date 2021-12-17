@@ -74,4 +74,4 @@ let g:airline_theme = 'everforest'
 
 let g:formatdef_astyle_linux_c = '"astyle --style=linux -s8"'
 let g:formatters_c = ['astyle_linux_c']
-
+au BufWrite * :Autoformat
