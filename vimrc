@@ -55,6 +55,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+set foldmethod=marker
 
 "COLORS!
 " For dark version.
