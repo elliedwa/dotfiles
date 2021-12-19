@@ -10,6 +10,8 @@ endif
 syntax on
 filetype plugin indent on
 set linebreak
+
+"Vim-Plug {{{
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -17,7 +19,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged') "{{{
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
@@ -37,7 +39,7 @@ Plug 'preservim/vimux' "vim + tmux = :thumbs-up:
 Plug 'benmills/vimux-golang' "I do a lot with go
 Plug 'edkolev/tmuxline.vim'
 
-call plug#end()
+call plug#end() "}}} }}}
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -73,6 +75,7 @@ let g:everforest_disable_italic_comment = 1
 colorscheme everforest
 let g:airline_theme = 'everforest'
 
+"Autoformat settings {{{
 let g:formatdef_astyle_linux_c = '"astyle --style=linux -s8"'
 let g:formatters_c = ['astyle_linux_c']
-au BufWrite * :Autoformat
+au BufWrite * :Autoformat "}}}
