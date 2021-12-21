@@ -41,6 +41,7 @@ Plug 'edkolev/tmuxline.vim'
 
 call plug#end() "}}} }}}
 
+"Vim-Airline {{{
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -48,9 +49,9 @@ endif
 let g:airline_symbols.space = "\ua0"
 
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1 "}}}
 
-
+"COLORS {{{
 "this is necessary for vim to have colors inside of tmux ¯\_(ツ)_/¯
 " Enable true color 启用终端24位色
 if exists('+termguicolors')
@@ -61,7 +62,6 @@ endif
 
 set foldmethod=marker
 
-"COLORS!
 " For dark version.
 set background=dark
 
@@ -75,7 +75,7 @@ let g:everforest_background = 'soft'
 let g:everforest_disable_italic_comment = 1
 
 colorscheme everforest
-let g:airline_theme = 'everforest'
+let g:airline_theme = 'everforest' "}}}
 
 "Autoformat settings {{{
 let g:formatdef_astyle_linux_c = '"astyle --style=linux -s8"'
