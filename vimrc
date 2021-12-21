@@ -37,6 +37,10 @@ Plug 'preservim/vimux' "vim + tmux = :thumbs-up:
 Plug 'benmills/vimux-golang' "I do a lot with go
 Plug 'edkolev/tmuxline.vim'
 
+"LSP plugins
+Plug 'prabirshrestha/vim-lsp'
+Plug 'dense-analysis/ale'
+
 call plug#end()
 
 if !exists('g:airline_symbols')
