@@ -46,6 +46,8 @@ endif
 let g:airline_symbols.space = "\ua0"
 
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
 
 "this is necessary for vim to have colors inside of tmux ¯\_(ツ)_/¯
 " Enable true color 启用终端24位色
